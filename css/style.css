@@ -9,6 +9,10 @@ img {
     max-width: 100%;
     vertical-align: bottom;
 }
+img:not(.logo--img) {
+    height: 400px;
+    object-fit: cover;
+}
 
 .body {
     width: 100%;
@@ -16,12 +20,9 @@ img {
 }
 
 .mainvisual img {
-    /* background-image: url(../img/mainvisual.jpg); */
     width: 100%;
-    /* height: calc(100vh-80px); */
     height: calc(100vh - 80px);
     object-fit: cover;
-    /* background-size: cover; */
 }
 
 .wrap1 .logo {
@@ -37,7 +38,7 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ddd;
+    background-color: #f0f0f0;
 }
 .nav--a {
     text-decoration: none;
@@ -65,13 +66,12 @@ img {
 }
 
 main {
-    background-color: #ddd;
+    background-color: #f0f0f0;
 }
 
 .news {
     max-width: 1000px;
     margin: 0 auto;
-    /* border: 1px solid red; */
 }
 
 .news-wrap {
@@ -103,20 +103,22 @@ main {
 
 h2 {
     font-size: 2rem;
+    font-weight: normal;
     line-height: 1.5;
+    letter-spacing: 0.3em;
+}
+
+h2 + span::after {
+    content: "";
+    display: block;
+    width: 35px;
+    height: 1px;
+    background: black;
+    margin-top: 30px;
     margin-bottom: 50px;
 }
 
-h2 span::after {
-    content: "";
-    display: block;
-    width: 30px;
-    height: 2px;
-    background: black;
-    margin-top: 15px;
-}
-
-.news h2 span,
+.news > span,
 .about span,
 .business span,
 #company .text span {
@@ -146,6 +148,10 @@ h2 span::after {
 
 .about {
     padding-top: 150px;
+}
+
+.about p {
+    font-size: 15px;
 }
 
 .business-outerwrap>li {
@@ -188,7 +194,6 @@ h2 span::after {
     align-items: center;
     position: relative;
     margin-top: 100px;
-    /* border: 1px solid red; */
 }
 
 .wrapper {
@@ -205,7 +210,6 @@ h2 span::after {
     position: absolute;
     top: 0;
     left: 0;
-    /* border: 1px solid red; */
 }
 
 #company .img {
@@ -213,7 +217,6 @@ h2 span::after {
     position: absolute;
     top: 115px;
     right: 0;
-    /* border: 1px solid red; */
 }
 
 #company .img img {
@@ -250,13 +253,9 @@ h2 span::after {
 }
 
 #footer {
-    /* height: 185px; */
     padding-bottom: 20px;
 }
 
-/* .footer--div {
-    padding-bottom: 20px;
-} */
 .footer--wrap {
     padding: 40px 0;
 }
@@ -279,10 +278,14 @@ h2 span::after {
 
 #footer .copy {
     margin-left: 75px;
-    /* margin-bottom: 1em; */
 }
 
 @media screen and (max-width: 900px) {
+    img:not(.logo--img) {
+        height: auto;
+        object-fit: cover;
+    }
+    
     .wrap1 {
         display: block;
     }
@@ -330,8 +333,19 @@ h2 span::after {
         padding-left: 20px;
         padding-top: 30px;
     }
-    .business h2 {
+    .about-wrap--li1 img {
+        width: 100%;
+        height: 300px;
+    }
+    .business h2,
+    .business span {
         margin-left: 20px;
+    }
+    
+    .mainvisual img {
+        width: 100%;
+        height: calc(100vh - 80px);
+        object-fit: cover;
     }
     .business-outerwrap {
         display: block;
@@ -367,7 +381,6 @@ h2 span::after {
         position: absolute;
         top: 50%;
         left: -18px;
-        /* margin-top: 15px; */
     }
 
     #company {
@@ -383,7 +396,6 @@ h2 span::after {
         padding: 50px 8% 50px 6%;
         margin-bottom: 10px;
         background-color: white;
-        /* border: 1px solid red; */
     }
     #company .text .info {
         flex-direction: column;
@@ -402,7 +414,6 @@ h2 span::after {
     #company .img {
         width: 100%;
         position: static;
-        /* border: 1px solid red; */
     }
 
     .footer--wrap {
@@ -416,7 +427,6 @@ h2 span::after {
 
     .footer--text p {
         margin-left: 10px;
-        /* margin: 0; */
     }
 
     #footer .copy {
